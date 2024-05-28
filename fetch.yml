@@ -1,0 +1,8 @@
+---
+- hosts: 172.31.34.137
+  become: yes
+  tasks:
+    - name: copy file from node1 to master
+      fetch: 
+        src: /root/gang
+        dest: /root/Ansible

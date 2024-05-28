@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: create a file
+      file:
+        path: /root/m1
+        state: touch

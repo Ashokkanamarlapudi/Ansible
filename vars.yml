@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    a:
+      - git
+  tasks:
+      - name: Insatllation of Docker
+        yum:
+          name: "{{a}}"
+          state: absent
+      - name: start docker
+        service:
+          name: docker
+          state: started
+          enabled: yes

@@ -1,0 +1,19 @@
+---
+- hosts: dev
+  become: yes
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+      tags: install
+    - name: start httpd
+      service:
+        name: httpd
+        state: stopped
+      tags: stop
+    - name: deploy index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+      tags: deploy

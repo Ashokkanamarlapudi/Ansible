@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: add the content of the file
+      copy:
+        content: 'This is DEvopS'
+        dest: /root/m1
+
+
