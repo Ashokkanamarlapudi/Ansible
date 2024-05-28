@@ -1,0 +1,8 @@
+---
+- hosts: all
+  user: root
+  tasks:
+    - name: create a directory
+      file:
+        path: /root/gb
+        state: absent
