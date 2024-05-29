@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: create a group
+      group:
+        name: group1
+        state: present

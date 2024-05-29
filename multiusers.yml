@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Add several user
+      user:
+        name: "{{ item.name }}"
+        state: present
+      loop:
+        - { name: 'testuser'}
+        - { name: 'testuser'}
